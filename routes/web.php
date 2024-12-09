@@ -1,11 +1,10 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/register', function () {
-    return view('auth.register');
-});
+Route::get('/register', [RegisterController::class, 'index']);
